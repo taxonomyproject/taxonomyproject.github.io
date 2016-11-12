@@ -1,0 +1,72 @@
+---
+layout: default
+javascript: home
+permalink: /dimensions/
+title: Dimensions
+mainparagraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum pulvinar consectetur. Also, lorem dolor sit amet, consectetur adipiscing elit.
+
+dimension1: Relationship Dynamics
+dimension1-aspect1-letter: H
+dimension1-aspect1-name: Hat
+dimension1-aspect2-letter: T
+dimension1-aspect2-name: Tiara
+
+dimension2: Relationship Dynamics
+dimension2-aspect1-letter: H
+dimension2-aspect1-name: Hat
+dimension2-aspect2-letter: T
+dimension2-aspect2-name: Tiara
+
+dimension3: Relationship Dynamics
+dimension3-aspect1-letter: H
+dimension3-aspect1-name: Hat
+dimension3-aspect2-letter: T
+dimension3-aspect2-name: Tiara
+
+dimension4: Relationship Dynamics
+dimension4-aspect1-letter: H
+dimension4-aspect1-name: Hat
+dimension4-aspect2-letter: K
+dimension4-aspect2-name: Tiara
+---
+
+<section class="hero hero-homepage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="large">{{ page.mainparagraph }}</p>
+            </div>
+        </div>
+        <hr class="dimensions-hr">
+        <div class="row">
+            {% for dimension in site.dimensions %}
+            <div class="col-sm-3">
+                <a href="/dimension/{{ site.dimensions.dimension1.slug }}">
+                    <div class="dimensions-list-item">
+                        <h2 class="h4">{{ dimension.name }}</h2>
+                        <div class="dimension-item">
+                            <span class="type-letter background-dimension1">{{ dimension.aspect1.letter }}</span>
+                            <span class="h5">{{ dimension.aspect1.name }}</span>
+                        </div>
+                        <div class="dimension-item">
+                            <span class="type-letter background-dimension1">{{ dimension.aspect2.letter }}</span>
+                            <span class="h5">{{ dimension.aspect2.name }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+</a>

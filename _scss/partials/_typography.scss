@@ -1,0 +1,76 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.6;
+  font-size: $font-size-base;
+  color: $body-text-color;
+  font-family: $base-font-family;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -ms-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin-top: 0rem;
+  line-height: 1.2;
+  color: $heading-text-color;
+  margin-bottom: 1rem;
+}
+
+h1, .h1 {
+  font-size: $font-size-h1;
+}
+
+h1 {
+  margin-bottom: 2.8rem;
+}
+
+h2, .h2 {
+  font-size: $font-size-h2;
+}
+
+h3, .h3 {
+  font-size: $font-size-h3;
+}
+
+h4, .h4 {
+  font-size: $font-size-h4;
+}
+
+h5, .h5 {
+  font-size: $font-size-h5;
+}
+
+h6, .h6 {
+  font-size: $font-size-h6;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.blog-image {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-transform-none {
+  text-transform: none;
+}

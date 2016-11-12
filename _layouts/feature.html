@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div id="hero"{% if page.background %} style="background-image:url({{ page.background }})"{% endif %}>
+    <div class="container">
+        <div class="row" id="hero-message">
+            <h1>{{ page.hero }}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div id="main-content"{% if page.hero %}{% else %} class="no-hero"{% endif %}>
+        {{ content }}
+    </div>
+</div>

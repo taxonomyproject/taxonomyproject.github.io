@@ -1,0 +1,113 @@
+---
+layout: default
+javascript: home
+main-header: A chart that describes the basic fundamental thing
+about-header: This is where we sell you on what we are doing and why
+about-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+about-image: /img/home-hero-types.png
+definitions-header: How we explain the things
+definitions-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+definitions-section1-header: Types
+definitions-section1-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+definitions-section2-header: Dimensions
+definitions-section2-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+quiz-header: Where do you fit into all of this business?
+quiz-text: You know we couldn’t do a personality system and not give you an interactive quiz. Answer 16 mildly amusing questions and we’ll give you some cold hard insight into the way you are presenting yourself today.
+quiz-button-text: Start the quiz
+---
+
+<section class="hero hero-homepage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10">
+        <h1>{{ page.main-header }}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-homepage-about">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2 class="h3">{{ page.about-header }}</h2>
+        <p>{{ page.about-text }}</p>
+      </div>
+      <div class="col-sm-8">
+        <img src="{{ page.about-image }}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-definitions section-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2 class="h3">{{ page.definitions-header }}</h2>
+        <p>{{ page.definitions-text }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-4"><img src="/img/home-icon-types.png"></div>
+          <div class="col-sm-8">
+            <h4>{{ page.definitions-section1-header }}</h4>
+            <p>{{ page.definitions-section1-text }}</p>
+            <a href="#">Read more &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-4"><img src="/img/home-icon-dimensions.png"></div>
+          <div class="col-sm-8">
+            <h4>{{ page.definitions-section2-header }}</h4>
+            <p>{{ page.definitions-section2-text }}</p>
+            <a href="#">Read more &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-quiz">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="text-center">
+          <img class="diamond-quiz" src="/img/diamond-quiz.jpg" alt="Photo collage of people">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h3>{{ page.quiz-header }}</h3>
+        <p>{{ page.quiz-text }}</p>
+        <a href="#" class="button">{{ page.quiz-button-text }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <h2 class="h3">Blog</h2>
+        <a href="#">Archive &rarr;</a>
+      </div>
+      <div class="col-sm-10">
+        <div class="row">
+          {% for post in site.posts limit:2 %}
+            <div class="col-sm-6">
+              <!-- <img src="{{ post.image }}" class="blog-image" alt=""> -->
+              <h3 class="h4"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+              <p class="date-author">Posted {{ post.date | date_to_string }} by {{ post.author }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

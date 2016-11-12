@@ -1,0 +1,33 @@
+<header class="header">
+    <div class="container">
+        <nav class="navbar row col-lg-12" role="navigation">
+            <div class="navbar-header">
+                <div class="navbar-left">
+                <a href="/">
+                    <h3>Taxonomy Project </h3>
+                </a>
+<!--                     <button type="button" class="navbar-toggle visible-xs" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button> -->
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class=""><a href="/about/"><span class="navbar-item-wrapper">About</span></a></li>
+                        <li class=""><a href="/dimensions/"><span class="navbar-item-wrapper">Dimensions</span></a></li>
+                        <li class=""><a href="/types/"><span class="navbar-item-wrapper">Types</span></a></li>
+                        <li class=""><a href="/blog/"><span class="navbar-item-wrapper {% if (page.customslug == 'blog') %} active{% endif %}">Blog</span></a></li>
+                        <li><a href="{{ the_page.permalink }}" class="button"><span class="navbar-item-wrapper">Take the Quiz</span></a></li>
+                        {% for the_page in site.pages %}
+                            {% if the_page.in_navigation == true %}
+                                <li class="{% if the_page.title == page.title %}selected{% endif %}"><a href="{{ the_page.permalink }}"><span class="navbar-item-wrapper">{{ the_page.title }}</span></a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

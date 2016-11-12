@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/img/favicon.png">
+        <title>
+            {% if page.hero %}
+                {% if page.title %} {{ page.title }} — {% endif %}{{ page.hero }} | {{ site.title }}
+            {% elsif site.description %}
+                {{ site.title }} — {{ site.description }}
+            {% else %}
+                {{ site.title }}
+            {% endif %}
+        </title>
+
+        {% if page.description %}
+            <meta name="description" content="{{ page.description }}"/>
+        {% elsif site.description %}
+            <meta name="description" content="{{ site.description }}"/>
+        {% endif %}
+
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+        <!-- build:css({app,.tmp}) /css/main.css -->
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+        <!-- endbuild -->
+
+        </script>
+    </head>
+
+    <body>
+
+        {% include header.html %}
+
+        {{ content }}
+
+        {% include footer.html %}
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        {% if page.javascript == "carousel" %}
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+           $('.carousel').carousel({
+            interval: false
+           });
+        });
+        </script>
+
+        {% endif %}
+
+    </body>
+
+</html>

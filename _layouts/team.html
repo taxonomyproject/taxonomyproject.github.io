@@ -1,0 +1,131 @@
+---
+layout: default
+js: carousel
+---
+
+{% assign selected-type = page %}
+
+{% assign selected-dimension1 = site.dimensions.dimension1[selected-type.dimension1-aspect] %}
+
+{% assign selected-dimension2 = site.dimensions.dimension2[selected-type.dimension2-aspect] %}
+
+{% assign selected-dimension3 = site.dimensions.dimension3[selected-type.dimension3-aspect] %}
+
+{% assign selected-dimension4 = site.dimensions.dimension4[selected-type.dimension4-aspect] %}
+
+<div class="hero hero-secondary">
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="type-letter background-dimension1">{{selected-dimension1.letter}}</div>
+            <div class="type-letter background-dimension2">{{selected-dimension2.letter}}</div>
+            <div class="type-letter background-dimension3">{{selected-dimension3.letter}}</div>
+            <div class="type-letter background-dimension4">{{selected-dimension4.letter}}</div>
+            <h1>{{ selected-type.name }}</h1>
+        </div>
+        <div class="col-sm-4">
+            <img class="diamond-type type-hero-image" src="{{ selected-type.image }}" alt="Illustration of the 'Queen of Having it All'">
+        </div>
+    </div>
+  </div>
+</div>
+<section class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <p>
+                    {{ page.js }}
+                </p>
+                <p class="large">
+                    {{ page.lead }}
+                </p>
+                {{ content }}
+            </div>
+            <div class="col-sm-4">
+                <div class="spectrum">
+                    <div class="spectrum-item color-dimension1 spectrum-select-{{selected-type.dimension1-aspect}}">
+                        <div class="spectrum-left">{{site.dimensions.dimension1.aspect1.name}}</div>
+                        <div class="spectrum-bar background-dimension1"></div>
+                        <div class="spectrum-right">{{site.dimensions.dimension1.aspect2.name}}</div>
+                    </div>
+                    <div class="spectrum-item color-dimension2 spectrum-select-{{selected-type.dimension2-aspect}}">
+                        <div class="spectrum-left">{{site.dimensions.dimension2.aspect1.name}}</div>
+                        <div class="spectrum-bar background-dimension2"></div>
+                        <div class="spectrum-right">{{site.dimensions.dimension2.aspect2.name}}</div>
+                    </div>
+                    <div class="spectrum-item color-dimension3 spectrum-select-{{selected-type.dimension3-aspect}}">
+                        <div class="spectrum-left">{{site.dimensions.dimension3.aspect1.name}}</div>
+                        <div class="spectrum-bar background-dimension3"></div>
+                        <div class="spectrum-right">{{site.dimensions.dimension3.aspect2.name}}</div>
+                    </div>
+                    <div class="spectrum-item color-dimension4 spectrum-select-{{selected-type.dimension4-aspect}}">
+                        <div class="spectrum-left">{{site.dimensions.dimension4.aspect1.name}}</div>
+                        <div class="spectrum-bar background-dimension4"></div>
+                        <div class="spectrum-right">{{site.dimensions.dimension4.aspect2.name}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2 class="h3">Celebrity Spirit Guide</h2>
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    {% for celebrity in page.celebrities %}
+                    <div class="celebrity item{% if forloop.first %} active{% endif %}">
+                        <img src="{{ celebrity.image }}">
+                        <h4>{{ celebrity.name }}</h4>
+                        <p>{{ celebrity.description }}</p>
+                    </div>
+                    {% endfor %}
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    &larr;
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    &rarr;
+                  </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h2 class="h3">Similar Types</h2>
+                {% for type in selected-type.similar %}
+
+                {% assign match-type-temp = site.team | where_exp:"item",
+                "item.type == type.type" %}
+
+                {% assign match-type = match-type-temp[0] %}
+
+                <div class="type-list-item">
+                    <div class="type-list-image">
+                        <img src="{{ match-type.image }}" alt="Illustration of the 'Queen of Having it All'">
+                    </div>
+                    <h3 class="h5">{{ match-type.name }}</h3>
+                    <div class="h5">{{ type.message }}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-sm-4">
+                <h2 class="h3">Required Reading</h2>
+                <div class="required-reading-item">
+                    <h3 class="h4">How the taxonomy was born: research and inspiration on a road trip back home</h3>
+                    <p>Posted May 4, 2016 by Emma Eisenberg</p>
+                </div>
+                <div class="required-reading-item">
+                    <h3 class="h4">How the taxonomy was born: research and inspiration on a road trip back home</h3>
+                    <p>Posted May 4, 2016 by Emma Eisenberg</p>
+                </div>
+                <a href="#">More from the blog</a>
+            </div>
+        </div>
+    </div>
+</section>

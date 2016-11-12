@@ -1,0 +1,184 @@
+#
+# This file contains configuration flags to customize your site
+#
+
+# Name of your site (displayed in the header)
+name: Jeff Frankl
+
+# Short bio or description (displayed in the header)
+description: A look into identities
+
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+
+collections:
+  types:
+    output: true
+  dimensions:
+    output: true
+
+# type:
+#   type1:
+#     name: "The Team Player"
+#     dimension1-aspect: "aspect1"
+#     dimension2-aspect: "aspect2"
+#     dimension3-aspect: "aspect2"
+#     dimension4-aspect: "aspect1"
+#     image: /img/types/diamond-illustration.png
+#     similar:
+#       - type: type1
+#         message: "More Chapstick"
+#       - type: type1
+#         message: "More Chapstick"
+#       - type: type4
+#         message: "More Chapstick"
+#       - type: type3
+#         message: "Less Chapstick"
+#   type2:
+#     name: "Queen of Having it All"
+#     dimension1-aspect: "aspect1"
+#     dimension2-aspect: "aspect2"
+#     dimension3-aspect: "aspect2"
+#     dimension4-aspect: "aspect1"
+#     image: /img/types/diamond-illustration.png
+#     similar:
+#       - type: type1
+#         message: "More Chapstick"
+#       - type: type1
+#         message: "More Chapstick"
+#       - type: type4
+#         message: "More Chapstick"
+#       - type: type3
+#         message: "Less Chapstick"
+#   type3:
+#     name: "Warrior"
+#     dimension1-aspect: "aspect1"
+#     dimension2-aspect: "aspect2"
+#     dimension3-aspect: "aspect2"
+#     dimension4-aspect: "aspect1"
+#     image: /img/types/diamond-illustration.png
+#     similar:
+#       - type: type1
+#         message: "More Chapstick"
+#       - type: type1
+#         message: "More Chapstick"
+#       - type: type4
+#         message: "More Chapstick"
+#       - type: type3
+#         message: "Less Chapstick"
+#   type4:
+#     name: "The Rogue"
+#     dimension1-aspect: "aspect1"
+#     dimension2-aspect: "aspect2"
+#     dimension3-aspect: "aspect2"
+#     dimension4-aspect: "aspect1"
+#     image: /img/types/diamond-illustration.png
+#     similar:
+#       - type: type1
+#         message: "More Chapstick"
+#       - type: type1
+#         message: "More Chapstick"
+#       - type: type4
+#         message: "More Chapstick"
+#       - type: type3
+#         message: "Less Chapstick"
+
+# dimensions:
+#   dimension1:
+#     name: "Relationships"
+#     slug: "relationships"
+#     aspect1:
+#       name: "Nice"
+#       letter: "N"
+#     aspect2:
+#       name: "Mean"
+#       letter: "M"
+#   dimension2:
+#     name: "Things"
+#     slug: "things"
+#     aspect1:
+#       name: "Goose"
+#       letter: "G"
+#     aspect2:
+#       name: "Eagle"
+#       letter: "E"
+#   dimension3:
+#     name: "Party Attitude"
+#     slug: "party-attitude"
+#     aspect1:
+#       name: "Soft"
+#       letter: "S"
+#     aspect2:
+#       name: "Hard"
+#       letter: "H"
+#   dimension4:
+#     name: "Happy Days"
+#     slug: "happy-days"
+#     aspect1:
+#       name: "Fonzi"
+#       letter: "F"
+#     aspect2:
+#       name: "Joani"
+#       letter: "J"
+
+#
+# Flags below are optional
+#
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email:
+  facebook:
+  flickr:
+  github: barryclark/jekyll-now
+  instagram:
+  linkedin:
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: jekyllrb
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
+
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus:
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics:
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url:
+
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
+#
+# !! You don't need to change any of the configuration flags below !!
+#
+
+# permalink: /:title/
+
+# The release of Jekyll Now that you're using
+# version: v1.2.0
+
+markdown: kramdown
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+# # Use the following plug-ins
+# gems:
+#   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+#   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+
+# Exclude these files from your production _site
+
+exclude: [bower_components, CNAME, README.md, LICENSE, Gemfile.lock, Gemfile]
